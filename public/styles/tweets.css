@@ -19,7 +19,6 @@ article:hover * .username {
   color: #D0D7EC;
 }
 
-
 article header {
   display: flex;
   align-items: center;
@@ -40,7 +39,6 @@ article header {
   color: #D0D7EC;
   display: none;
 }
-
 
 .posted-tweets {
   display: flex;
