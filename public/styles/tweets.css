@@ -1,0 +1,57 @@
+article img {
+  height: 4rem;
+  width: auto;
+}
+
+article {
+  border: 3px solid grey;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+article header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0.5rem;
+}
+
+.left-hand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.username {
+  display: flex;
+  justify-content: flex-end;
+  color: #D0D7EC
+}
+.posted-tweets {
+  display: flex;
+  flex-direction: column;
+}
+
+.msg {
+  border-bottom: 3px solid grey;
+  padding: 1rem;
+  font-size: 22px;
+}
+
+footer p {
+  font-size: 16px;
+  padding-left: 1rem;
+}
+
+article footer span {
+  font-size: 14px;
+  padding-right: 1rem;
+  color: #4056A1;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
