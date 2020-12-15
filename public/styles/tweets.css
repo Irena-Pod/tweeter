@@ -9,6 +9,17 @@ article {
   margin-bottom: 1rem;
 }
 
+article:hover{
+  box-shadow: 8px 11px 5px 1px #D0D7EC;
+  font-weight: 700;
+}
+
+article:hover * .username {
+  display: block;
+  color: #D0D7EC;
+}
+
+
 article header {
   display: flex;
   align-items: center;
@@ -26,8 +37,11 @@ article header {
 .username {
   display: flex;
   justify-content: flex-end;
-  color: #D0D7EC
+  color: #D0D7EC;
+  display: none;
 }
+
+
 .posted-tweets {
   display: flex;
   flex-direction: column;
