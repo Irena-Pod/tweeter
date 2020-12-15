@@ -56,13 +56,17 @@
   <main class="container">
     <section class="new-tweet">
       <form method="POST" action="/tweets/">
-        <input type="text" name="text" id="tweet-text" placeholder="What are you humming about?"></input>
+        <input class="inputBox" type="text" name="text" id="tweet-text" placeholder="What are you humming about?"/>
         <div class="under-textbox">
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
+
+    <!-- JS files in directory-->
+    <script src="scripts/composer-char-counter.js"></script>
+
 </body>
 
 </html>
