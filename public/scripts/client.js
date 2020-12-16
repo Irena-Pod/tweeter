@@ -1,10 +1,46 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(document).ready(function () {
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
+    },
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    },
+    {
+      "user": {
+        "name": "Test User 3",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@tu3" },
+      "content": {
+        "text": "test tweet"
+      },
+      "created_at": 1607974412000
+    }
+  ]
+
+  // Loops through array and prepends each tweet to .posted-tweets
+  const renderTweets = function (data) {
+    for (let user of data) {
+      const tweetElement = createTweetElement(user);
+      $('.posted-tweets').prepend(tweetElement);
+    }
+  }
 
   const createTweetElement = function (tweetData) {
     const user = tweetData;
@@ -36,29 +72,6 @@ $(document).ready(function () {
     return $tweet;
   }
 
-
-
-
-
-
-
-
-  // Test / driver code (temporary). Eventually will get this from the server.
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  }
-
-  const $tweet = createTweetElement(tweetData);
-  // Add to page
-  $('.posted-tweets').append($tweet);
-
+  renderTweets(data);
 
 });
