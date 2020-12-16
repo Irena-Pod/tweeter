@@ -16,7 +16,8 @@ $(document).ready(function () {
       "user": {
         "name": "Descartes",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
+        "handle": "@rd"
+      },
       "content": {
         "text": "Je pense , donc je suis"
       },
@@ -26,13 +27,14 @@ $(document).ready(function () {
       "user": {
         "name": "Test User 3",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@tu3" },
+        "handle": "@tu3"
+      },
       "content": {
         "text": "test tweet"
       },
       "created_at": 1607974412000
     }
-  ]
+  ];
 
   // Loops through array and prepends each tweet to .posted-tweets
   const renderTweets = function (data) {
@@ -71,6 +73,31 @@ $(document).ready(function () {
 
     return $tweet;
   }
+
+  // Post new tweet
+  const postTweet = () => {
+    const url = `http://localhost:8080/tweets`;
+    // Create POST Ajax request
+    $.ajax({
+      method: 'POST',
+      url: url,
+      data: "text": $("form").serialize()
+    })
+      .then((result) => {
+        console.log("hello")
+        renderTweets(result)
+      })
+      .catch((err) => console.log(err));
+  }
+
+  $('#composeNewTweet').on('submit', function (event) {
+    event.preventDefault();
+
+    const $tweetBox = $(this).children('input[type="text"]')
+
+    postTweet(data);
+    $tweetBox.val('');
+  })
 
   renderTweets(data);
 
