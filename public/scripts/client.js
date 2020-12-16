@@ -1,8 +1,7 @@
 $(document).ready(function () {
- 
+
   // Loops through array and prepends each tweet to .posted-tweets
   const renderTweets = function (data) {
-    console.log("renderTweet", data)
     for (let user of data) {
       const tweetElement = createTweetElement(user);
       $('.posted-tweets').prepend(tweetElement);
@@ -47,15 +46,16 @@ $(document).ready(function () {
       method: 'GET',
       url: url
     })
-    .then ((result) => {
-      renderTweets(result)
-    })
-    .catch((err) => console.log(err))
+      .then((result) => {
+        renderTweets(result)
+      })
+      .catch((err) => console.log(err))
   };
-  
+
   // Post new tweet
   const postTweet = () => {
     const url = `http://localhost:8080/tweets`;
+
     // Create POST Ajax request
     $.ajax({
       method: 'POST',
@@ -69,12 +69,21 @@ $(document).ready(function () {
   }
 
   $('#composeNewTweet').on('submit', function (event) {
-    event.preventDefault();
-
-    const $tweetBox = $(this).children('input[type="text"]')
-
-    postTweet();
-    $tweetBox.val('');
+    const $tweetBox = $(this).children('input[type="text"]');
+    const $tweetLength = $tweetBox.val().length; 
+    
+    // Form validation
+    if ($tweetBox.val() === '') {
+      alert("Tweet cannot be empty");
+      event.preventDefault();
+    } else if ($tweetLength > 140) {
+      alert("Tweet cannot be over 140 characters");
+      event.preventDefault();
+    } else {
+      postTweet();
+      event.preventDefault();
+      $tweetBox.val('');
+    }
   })
 
   loadTweets()
