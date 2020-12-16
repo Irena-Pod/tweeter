@@ -21,7 +21,7 @@ input{
   outline: none;
 }
 
-.under-textbox {
+.new-tweet-box{
   display: flex;
   flex-direction: row;
   justify-content: space-between;

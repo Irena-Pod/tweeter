@@ -15,7 +15,7 @@ article:hover{
 }
 
 article:hover * .username {
-  display: block;
+  opacity: 1;
   color: #D0D7EC;
 }
 
@@ -27,7 +27,7 @@ article header {
   padding: 0.5rem;
 }
 
-.left-hand {
+.avatar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -37,7 +37,7 @@ article header {
   display: flex;
   justify-content: flex-end;
   color: #D0D7EC;
-  display: none;
+  opacity: 0;
 }
 
 .posted-tweets {
