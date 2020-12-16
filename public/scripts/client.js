@@ -1,43 +1,8 @@
 $(document).ready(function () {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "Test User 3",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@tu3"
-      },
-      "content": {
-        "text": "test tweet"
-      },
-      "created_at": 1607974412000
-    }
-  ];
-
+ 
   // Loops through array and prepends each tweet to .posted-tweets
   const renderTweets = function (data) {
+    console.log("renderTweet", data)
     for (let user of data) {
       const tweetElement = createTweetElement(user);
       $('.posted-tweets').prepend(tweetElement);
@@ -74,6 +39,20 @@ $(document).ready(function () {
     return $tweet;
   }
 
+  // Retrieve tweets from server
+  const loadTweets = function () {
+    const url = `http://localhost:8080/tweets`;
+
+    $.ajax({
+      method: 'GET',
+      url: url
+    })
+    .then ((result) => {
+      renderTweets(result)
+    })
+    .catch((err) => console.log(err))
+  };
+  
   // Post new tweet
   const postTweet = () => {
     const url = `http://localhost:8080/tweets`;
@@ -81,10 +60,9 @@ $(document).ready(function () {
     $.ajax({
       method: 'POST',
       url: url,
-      data: "text": $("form").serialize()
+      data: $("form").serialize()
     })
       .then((result) => {
-        console.log("hello")
         renderTweets(result)
       })
       .catch((err) => console.log(err));
@@ -95,10 +73,10 @@ $(document).ready(function () {
 
     const $tweetBox = $(this).children('input[type="text"]')
 
-    postTweet(data);
+    postTweet();
     $tweetBox.val('');
   })
 
-  renderTweets(data);
+  loadTweets()
 
 });
