@@ -56,7 +56,7 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <form method="POST" action="/tweets/">
+      <form id="composeNewTweet" method="POST" action="/tweets/">
         <input class="inputBox" type="text" name="text" id="tweet-text" placeholder="What are you humming about?" />
         <div class="new-tweet-box">
           <button type="submit">Tweet</button>
@@ -68,7 +68,7 @@
     <section class="posted-tweets">
       <!-- Dynamic tweets added here -->
     </section>
-    
+
   </main>
   <!-- JS files in directory-->
   <script src="scripts/composer-char-counter.js"></script>

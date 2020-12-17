@@ -10,19 +10,18 @@ $(document).ready(function () {
     }
   }
 
-    // Prevent Cross-Site Scripting (XSS)
-    const escape = function(str) {
-      let div = document.createElement('div');
-      div.appendChild(document.createTextNode(str));
-      return div.innerHTML;
-    }
+  // Prevent Cross-Site Scripting (XSS)
+  const escape = function (str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   const createTweetElement = function (tweetData) {
     const user = tweetData;
-  
+
     // Date difference in days
     const parsedDate = Math.round(Math.abs((new Date() - new Date(user.created_at)) / (1000 * 3600 * 24)));
-
 
     // Create new tweet element
     let $tweet = `<article>
@@ -74,10 +73,8 @@ $(document).ready(function () {
       data: $("form").serialize()
     })
       .then((result) => {
-        renderTweets(result)
-        loadTweets();
         // Refetch tweets without page refresh
-       
+        loadTweets();
       })
       .catch((err) => console.log(err));
   }
@@ -97,7 +94,7 @@ $(document).ready(function () {
       postTweet();
       event.preventDefault();
       $tweetBox.val('');
-     $('#tweet-text').trigger('input');
+      $('#tweet-text').trigger('input');
     }
   })
 
