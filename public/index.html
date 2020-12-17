@@ -4,6 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -44,38 +45,44 @@
     </div>
   </nav>
 
-  <header class="main-header">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Irena Podgurski</h2>
-    </div>
-  </header>
-
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <form id="composeNewTweet" method="POST" action="/tweets/">
-        <div class ="error-box">
-          <i class="fal fa-exclamation-triangle"></i>
-          <label class="error"></label>
+  <div class="middle-content">
+    <div class="c1">
+      <header class="main-header">
+        <div>
+          <img src="/images/profile-hex.png">
         </div>
-        <input class="inputBox" type="text" name="text" id="tweet-text" placeholder="What are you humming about?" />
-        <div class="new-tweet-box">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+        <br>
+        <div>
+          <h2>Irena Podgurski</h2>
         </div>
-      </form>
-    </section>
+      </header>
+    </div>
 
-    <section class="posted-tweets">
-      <!-- Dynamic tweets added here -->
-    </section>
 
-  </main>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <form id="composeNewTweet" method="POST" action="/tweets/">
+          <div class="error-box">
+            <i class="fal fa-exclamation-triangle"></i>
+            <label class="error"></label>
+          </div>
+          <input class="inputBox" type="text" name="text" id="tweet-text" placeholder="What are you humming about?" />
+          <div class="new-tweet-box">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+
+      <section class="posted-tweets">
+        <!-- Dynamic tweets added here -->
+      </section>
+
+
+    </main>
+  </div>
 
 </body>
 

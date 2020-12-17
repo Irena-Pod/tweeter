@@ -1,69 +1,74 @@
-article img {
-  height: 4rem;
-  width: auto;
-}
+/* Desktop Screen*/
+@media only screen and (min-width: 1024px) {
+  
+  article img {
+    height: 3rem;
+    width: auto;
+  }
 
-article {
-  border: 3px solid grey;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
+  article {
+    border: 3px solid grey;
+    margin-bottom: 1rem;
+  }
 
-article:hover{
-  box-shadow: 8px 11px 5px 1px #D0D7EC;
-  font-weight: 700;
-}
+  article:hover {
+    box-shadow: 8px 11px 5px 1px #d0d7ec;
+    font-weight: 700;
+  }
 
-article:hover * .username {
-  opacity: 1;
-  color: #D0D7EC;
-}
+  article:hover * .username {
+    opacity: 1;
+    color: #d0d7ec;
+  }
 
-article header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 0.5rem;
-}
+  article header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0.5rem;
+  }
 
-.avatar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+  .avatar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
-.username {
-  display: flex;
-  justify-content: flex-end;
-  color: #D0D7EC;
-  opacity: 0;
-}
+  .username {
+    display: flex;
+    justify-content: flex-end;
+    color: #d0d7ec;
+    opacity: 0;
+  }
 
-.posted-tweets {
-  display: flex;
-  flex-direction: column;
-}
+  .posted-tweets {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+  }
 
-.msg {
-  border-bottom: 3px solid grey;
-  padding: 1rem;
-  font-size: 22px;
-}
+  .msg {
+    border-bottom: 3px solid grey;
+    padding: 1rem;
+    font-size: 22px;
+  }
 
-footer p {
-  font-size: 16px;
-  padding-left: 1rem;
-}
+  footer p {
+    font-size: 16px;
+    padding-left: 1rem;
+  }
 
-article footer span {
-  font-size: 14px;
-  padding-right: 1rem;
-  color: #4056A1;
-}
+  article footer span {
+    font-size: 14px;
+    padding-right: 1rem;
+    color: #4056a1;
+  }
 
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
