@@ -2,16 +2,27 @@ $(document).ready(function () {
 
   // Loops through array and prepends each tweet to .posted-tweets
   const renderTweets = function (data) {
+    // clears tweets before rendering posted-tweets
+    $('.posted-tweets').empty();
     for (let user of data) {
       const tweetElement = createTweetElement(user);
       $('.posted-tweets').prepend(tweetElement);
     }
   }
 
+    // Prevent Cross-Site Scripting (XSS)
+    const escape = function(str) {
+      let div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+
   const createTweetElement = function (tweetData) {
     const user = tweetData;
+  
     // Date difference in days
     const parsedDate = Math.round(Math.abs((new Date() - new Date(user.created_at)) / (1000 * 3600 * 24)));
+
 
     // Create new tweet element
     let $tweet = `<article>
@@ -23,7 +34,7 @@ $(document).ready(function () {
       <h6 class="username">${user.user.handle}</h6>
     </header>
     <div>
-      <p class="msg">${user.content.text}</p>
+      <p class="msg">${escape(user.content.text)}</p>
     </div>
     <footer>
       <p>${parsedDate} days ago</p>
@@ -64,8 +75,9 @@ $(document).ready(function () {
     })
       .then((result) => {
         renderTweets(result)
-        // Refetch tweets without page refresh
         loadTweets();
+        // Refetch tweets without page refresh
+       
       })
       .catch((err) => console.log(err));
   }
@@ -85,6 +97,7 @@ $(document).ready(function () {
       postTweet();
       event.preventDefault();
       $tweetBox.val('');
+     $('#tweet-text').trigger('input');
     }
   })
 
