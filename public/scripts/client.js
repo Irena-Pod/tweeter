@@ -53,7 +53,7 @@ $(document).ready(function () {
   };
 
   // Post new tweet
-  const postTweet = () => {
+  const postTweet = function () {
     const url = `http://localhost:8080/tweets`;
 
     // Create POST Ajax request
@@ -64,14 +64,16 @@ $(document).ready(function () {
     })
       .then((result) => {
         renderTweets(result)
+        // Refetch tweets without page refresh
+        loadTweets();
       })
       .catch((err) => console.log(err));
   }
 
   $('#composeNewTweet').on('submit', function (event) {
     const $tweetBox = $(this).children('input[type="text"]');
-    const $tweetLength = $tweetBox.val().length; 
-    
+    const $tweetLength = $tweetBox.val().length;
+
     // Form validation
     if ($tweetBox.val() === '') {
       alert("Tweet cannot be empty");
