@@ -83,14 +83,18 @@ $(document).ready(function () {
     const $tweetBox = $(this).children('input[type="text"]');
     const $tweetLength = $tweetBox.val().length;
 
-    // Form validation
     if ($tweetBox.val() === '') {
-      alert("Tweet cannot be empty");
+      $('.error-box').hide().slideDown(500);
+      $('.error').text('Tweet cannot be empty');
       event.preventDefault();
     } else if ($tweetLength > 140) {
-      alert("Tweet cannot be over 140 characters");
+      $('.error-box').hide().slideDown(500);
+      $('.error').text('Tweet cannot be over 140 characters');
       event.preventDefault();
     } else {
+      if ($('.error-box').is(':visible')) {
+        $('.error-box').slideUp()
+      }
       postTweet();
       event.preventDefault();
       $tweetBox.val('');

@@ -1,0 +1,11 @@
+.error-box {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  color: #e1341e;
+  border: 3px solid #e1341e;
+  display: none;
+  font-size: 20px;
+  background-color: #f7c9c3;
+}
