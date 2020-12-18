@@ -16,9 +16,6 @@ html {
  * Global layout stuff
  */
 
-/* Desktop Screen*/
-@media only screen and (min-width: 1024px) {
-
   body {
     display: flex;
     justify-content: center;
@@ -53,4 +50,4 @@ html {
     flex-direction: column;
     width: 40%;
   }
-}
+
