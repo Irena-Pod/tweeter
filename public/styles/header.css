@@ -1,13 +1,30 @@
+.main-header {
+  height: 40%;
+  width: 90%;
+  background-color: #ce9b31;
+  background-image: url("../images/transparent-background.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-size: 20px;
+  color: white;
+}
+
+/* Tablet Screen */
+@media only screen and (max-width: 1023px) {
   .main-header {
-    height: 60%;
-    width: 90%;
-    background-color: #ce9b31;
-    background-image: url("../images/transparent-background.png");
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    font-size: 20px;
-    color: white;
+    padding-top: 0;
+    width: 100%;
+    font-size: 15px;
   }
 
+  .c1 {
+    background-color: #ce9b31;
+    background-image: url("../images/transparent-background.png");
+    margin-bottom: 2rem;
+  }
+  img {
+    width: 20%;
+  }
+}
