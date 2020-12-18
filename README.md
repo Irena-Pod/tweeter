@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-Part of Lighthouse Labs Web Development Bootcamp Project. This repository was clone and built upon to practice HTML, CSS, JS, jQuery and AJAX front-end skills.
+Part of Lighthouse Labs Web Development Bootcamp Project. This repository was cloned and built upon to practice HTML, CSS, JS, jQuery and AJAX front-end skills.
 
 
 ## Dependencies
