@@ -1,11 +1,14 @@
   article img {
     height: 3rem;
     width: auto;
+    padding-right: 0.3rem;
   }
 
   article {
     border: 3px solid grey;
     margin-bottom: 1rem;
+    overflow-wrap: break-word;
+    padding: 0.5rem;
   }
 
   article:hover {
@@ -35,8 +38,7 @@
   .username {
     display: flex;
     justify-content: flex-end;
-    color: #d0d7ec;
-    opacity: 0;
+    color: #b9bfd3;
   }
 
   .posted-tweets {
@@ -58,6 +60,10 @@
   }
 
   article footer span {
+    opacity: 0;
+  }
+  article:hover * #icons {
+    opacity: 1;
     font-size: 14px;
     padding-right: 1rem;
     color: #4056a1;

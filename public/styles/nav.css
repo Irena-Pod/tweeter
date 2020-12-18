@@ -22,6 +22,7 @@ nav span {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: ;
 }
 
 #arrow {
@@ -34,6 +35,10 @@ nav span {
   nav {
     background-color: #ce9b31;
     background-image: url("../images/transparent-background.png");
-    
+  }
+
+  .right-nav button {
+    background-color: #ce9b31;
+    background-image: url("../images/transparent-background.png");
   }
 }

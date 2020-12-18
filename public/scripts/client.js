@@ -37,7 +37,7 @@ $(document).ready(function () {
     </div>
     <footer>
       <p>${parsedDate} days ago</p>
-      <span>
+      <span id="icons">
         <i class="fas fa-flag-alt"></i>
         <i class="fas fa-retweet"></i>
         <i class="fas fa-heart"></i>
